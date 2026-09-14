@@ -18,7 +18,7 @@
             label = "BT_DEV1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release &mo AND>, <&macro_tap &out OUT_BLE &bt BT_SEL 0 &to AND>;
+            bindings = <&macro_release &mo WIN>, <&macro_tap &out OUT_BLE &bt BT_SEL 0 &to AND>;
         };
         bt_dev2: bt_dev2 {
             // iPad mini6 -> Mac系
