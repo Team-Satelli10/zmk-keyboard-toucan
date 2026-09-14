@@ -11,17 +11,6 @@
 #define WIN      5
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-        tri_layer_mac {
-            if-layers = <1 5>;
-            then-layer = <3>;
-        };
-    };
 
     macros {
         bt_dev1: bt_dev1 {
