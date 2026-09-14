@@ -10,7 +10,16 @@
 #define MAC      4
 #define WIN      5
 
-/   macros {
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
+    macros {
         bt_dev1: bt_dev1 {
             // Galaxy Z Fold6 -> Win系
             label = "BT_DEV1";
