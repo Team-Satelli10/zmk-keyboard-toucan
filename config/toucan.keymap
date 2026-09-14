@@ -18,7 +18,7 @@
             label = "BT_DEV1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release &mo WIN>, <&macro_tap &out OUT_BLE &bt BT_SEL 0 &to AND>;
+            bindings = <&macro_release &mo AND>, <&macro_tap &out OUT_BLE &bt BT_SEL 0 &to AND>;
         };
         bt_dev2: bt_dev2 {
             // iPad mini6 -> Mac系
@@ -59,17 +59,27 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &mo 1
+                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &mo SYM
             >;
         };
 
-        nav {
-            display-name = "NAV";
+        mac {
+            display-name = "MAC";
             bindings = <
-                &kp TAB     &kp N1         &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-                &bt BT_CLR  &bt_dev1       &bt_dev2 &bt_dev3 &bt_dev4 &bt_dev5    &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &kp LSHFT   &studio_unlock &trans   &trans   &trans   &trans      &trans   &trans   &trans &trans    &trans &trans
-                                              &kp BSPC &kp RET &kp SPACE   &mkp LCLK &mkp RCLK   &kp RALT
+                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+                &kp LGUI  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &mo SYM
+            >;
+        };
+
+        win {
+            display-name = "WIN";
+            bindings = <
+                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+                &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK & mo SYM
             >;
         };
 
@@ -79,7 +89,17 @@
                 &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
                 &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
                 &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &trans
+                                          &kp LGUI &trans   &kp SPACE   &kp RET   &tog NAV    &trans
+            >;
+        };
+
+        nav {
+            display-name = "NAV";
+            bindings = <
+                &kp TAB     &kp N1         &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+                &bt BT_CLR  &bt_dev1       &bt_dev2 &bt_dev3 &bt_dev4 &bt_dev5    &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+                &kp LSHFT   &studio_unlock &trans   &trans   &trans   &trans      &trans   &trans   &trans &trans    &trans &trans
+                                              &kp BSPC &kp RET &kp SPACE          &trans   &trans   &trans   
             >;
         };
 
@@ -90,26 +110,6 @@
                 &kp LCTRL &trans &kp F4 &kp F5 &kp F6 &kp F11   &trans       &trans      &trans       &trans &trans &trans
                 &kp LSHFT &trans &kp F1 &kp F2 &kp F3 &kp F10   &trans       &trans      &trans       &trans &trans &trans
                                    &kp LGUI &mo NAV &kp SPACE   &kp RET &mo 2 &kp RALT
-            >;
-        };
-
-        mac {
-            display-name = "MAC";
-            bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LGUI  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &mo 1
-            >;
-        };
-
-        win {
-            display-name = "WIN";
-            bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &mo 1
             >;
         };
 
