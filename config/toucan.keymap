@@ -2,19 +2,19 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 
-#define AND     0
-#define NAV      1
-#define SYM      2
-#define ADJ      3
-#define MAC      4
-#define WIN      5
+#define AND 0
+#define NAV 1
+#define SYM 2
+#define ADJ 3
+#define MAC 4
+#define WIN 5
 
 / {
-
     macros {
         bt_dev1: bt_dev1 {
-            // Galaxy Z Fold6 -> Win系
+            // Galaxy Z Fold6 -> Android
             label = "BT_DEV1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -28,7 +28,7 @@
             bindings = <&out OUT_BLE>, <&bt BT_SEL 1>, <&to MAC>;
         };
         bt_dev3: bt_dev3 {
-            // 空き(Windows扱い) -> Win系
+            // 空き(Windows扱い) -> WIN
             label = "BT_DEV3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -42,7 +42,7 @@
             bindings = <&out OUT_BLE>, <&bt BT_SEL 3>, <&to MAC>;
         };
         bt_dev5: bt_dev5 {
-            // Windows PC -> Win系
+            // Windows PC -> WIN
             label = "BT_DEV5";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -59,7 +59,7 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp BSPC &kp LGUI &kp SPACE   &trans &trans &mo NAV
+                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &tog 1
             >;
         };
 
@@ -69,7 +69,7 @@
                 &kp TAB     &kp N1         &kp N2   &kp N3   &kp N4   &kp N5      &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
                 &bt BT_CLR  &bt_dev1       &bt_dev2 &bt_dev3 &bt_dev4 &bt_dev5    &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
                 &kp LSHFT   &studio_unlock &trans   &trans   &trans   &trans      &trans   &trans   &trans &trans    &trans &trans
-                                              &kp BSPC &kp RET &kp SPACE   &trans &trans    &trans
+                                              &kp BSPC &kp RET &kp SPACE   &mkp LCLK &mkp RCLK   &tog 1
             >;
         };
 
@@ -99,7 +99,7 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
                 &kp LGUI  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp BSPC &kp LGUI &kp SPACE   &trans &trans &mo NAV
+                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &tog 1
             >;
         };
 
@@ -109,7 +109,7 @@
                 &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
                 &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
                 &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp BSPC &kp LGUI &kp SPACE   &trans &trans &mo NAV
+                                &kp BSPC &kp LGUI &kp SPACE   &mkp LCLK &mkp RCLK &tog 1
             >;
         };
 
